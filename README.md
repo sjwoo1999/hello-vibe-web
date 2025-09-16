@@ -101,22 +101,37 @@ git clone <repository-url>
 cd vibe-hello-web
 ```
 
-2. **의존성 설치**
+2. **환경변수 설정**
+```bash
+# .env.example을 .env로 복사
+cp .env.example .env
+
+# .env 파일을 열어서 Firebase 설정 정보 입력
+# VITE_FIREBASE_API_KEY=your_api_key_here
+# VITE_FIREBASE_AUTH_DOMAIN=your_project_id.firebaseapp.com
+# VITE_FIREBASE_PROJECT_ID=your_project_id
+# VITE_FIREBASE_STORAGE_BUCKET=your_project_id.firebasestorage.app
+# VITE_FIREBASE_MESSAGING_SENDER_ID=your_messaging_sender_id
+# VITE_FIREBASE_APP_ID=your_app_id
+# VITE_FIREBASE_MEASUREMENT_ID=your_measurement_id
+```
+
+3. **의존성 설치**
 ```bash
 npm install
 ```
 
-3. **개발 서버 실행**
+4. **개발 서버 실행**
 ```bash
 npm run dev
 ```
 
-4. **빌드**
+5. **빌드**
 ```bash
 npm run build
 ```
 
-5. **Firebase 배포**
+6. **Firebase 배포**
 ```bash
 firebase deploy --only hosting
 ```
@@ -248,9 +263,12 @@ npm run lint
 
 ## 🔒 보안
 
-- Firebase Authentication을 통한 사용자 인증
-- Firestore 보안 규칙 (개발용으로 너그러운 규칙 적용)
-- 입력 데이터 검증 및 sanitization
+- **환경변수 분리**: Firebase API 키를 하드코딩에서 환경변수로 분리
+- **Git 보안**: .gitignore로 민감한 정보 보호
+- **Firebase Authentication**: 이메일/비밀번호 로그인 시스템
+- **Firestore 보안 규칙**: 개발용으로 너그러운 규칙 적용
+- **입력 데이터 검증**: 모든 사용자 입력에 대한 검증 및 sanitization
+- **HTTPS**: Firebase Hosting을 통한 안전한 배포
 
 ## 🤝 기여하기
 
