@@ -1,0 +1,334 @@
+/* LandingPage 컴포넌트 스타일 */
+.landing-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+}
+
+/* 히어로 섹션 */
+.hero {
+  background: linear-gradient(135deg, var(--primary-orange) 0%, var(--primary-blue) 50%, var(--primary-green) 100%);
+  color: var(--neutral-white);
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="white" opacity="0.1"/><circle cx="10" cy="60" r="0.5" fill="white" opacity="0.1"/><circle cx="90" cy="40" r="0.5" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+  opacity: 0.3;
+}
+
+.hero-content {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  line-height: 1.2;
+  text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.3);
+}
+
+.hero-accent {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 4rem;
+  color: var(--accent-yellow);
+  text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.5);
+  margin-top: 8px;
+  animation: bounce 2s infinite;
+}
+
+.hero-description {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  margin-bottom: 48px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.3);
+}
+
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 24px 32px;
+  border: 3px solid var(--neutral-white);
+  border-radius: var(--border-radius);
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  font-family: var(--font-display);
+  color: var(--accent-yellow);
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.3);
+}
+
+.stat-label {
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* 모임방 목록 섹션 */
+.rooms-section {
+  padding: 64px 0;
+  background-color: var(--neutral-light-gray);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--neutral-black);
+  margin-bottom: 16px;
+}
+
+.section-count {
+  color: var(--primary-orange);
+  font-size: 1.5rem;
+  margin-left: 12px;
+}
+
+.rooms-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 32px;
+  margin-bottom: 48px;
+}
+
+/* 빈 상태 */
+.empty-state {
+  text-align: center;
+  padding: 80px 20px;
+  background-color: var(--neutral-white);
+  border: var(--border-thick);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-bold);
+}
+
+.empty-icon {
+  font-size: 4rem;
+  margin-bottom: 24px;
+  display: block;
+  animation: bounce 2s infinite;
+}
+
+.empty-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--neutral-black);
+  margin-bottom: 16px;
+}
+
+.empty-description {
+  font-size: 1.125rem;
+  color: #666;
+  margin-bottom: 32px;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 푸터 */
+.footer {
+  background-color: var(--neutral-black);
+  color: var(--neutral-white);
+  padding: 48px 0 32px;
+  margin-top: auto;
+}
+
+.footer-content {
+  text-align: center;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.footer-logo .logo-icon {
+  font-size: 2rem;
+}
+
+.footer-logo .logo-text {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--primary-orange);
+}
+
+.footer-description {
+  font-size: 1.125rem;
+  margin-bottom: 32px;
+  color: #ccc;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.footer-link {
+  color: #ccc;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.footer-link:hover {
+  color: var(--primary-orange);
+  text-decoration: underline;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .hero {
+    padding: 60px 0;
+  }
+  
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .hero-accent {
+    font-size: 3rem;
+  }
+  
+  .hero-description {
+    font-size: 1.125rem;
+    margin-bottom: 32px;
+  }
+  
+  .hero-stats {
+    gap: 24px;
+  }
+  
+  .stat-item {
+    padding: 16px 24px;
+  }
+  
+  .stat-number {
+    font-size: 2rem;
+  }
+  
+  .stat-label {
+    font-size: 0.9rem;
+  }
+  
+  .rooms-section {
+    padding: 48px 0;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .section-count {
+    font-size: 1.25rem;
+  }
+  
+  .rooms-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  
+  .empty-state {
+    padding: 60px 20px;
+  }
+  
+  .empty-icon {
+    font-size: 3rem;
+  }
+  
+  .footer {
+    padding: 32px 0 24px;
+  }
+  
+  .footer-links {
+    gap: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 40px 0;
+  }
+  
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .hero-accent {
+    font-size: 2.5rem;
+  }
+  
+  .hero-description {
+    font-size: 1rem;
+  }
+  
+  .hero-stats {
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .stat-item {
+    padding: 12px 20px;
+  }
+  
+  .stat-number {
+    font-size: 1.75rem;
+  }
+  
+  .section-title {
+    font-size: 1.75rem;
+  }
+  
+  .rooms-grid {
+    gap: 20px;
+  }
+  
+  .footer-links {
+    flex-direction: column;
+    gap: 16px;
+  }
+}

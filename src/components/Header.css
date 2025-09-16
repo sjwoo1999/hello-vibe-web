@@ -1,0 +1,72 @@
+/* Header 컴포넌트 스타일 */
+.header {
+  background-color: var(--neutral-white);
+  border-bottom: var(--border-thick);
+  box-shadow: var(--shadow-bold);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.logo-icon {
+  font-size: 2rem;
+  animation: bounce 2s infinite;
+}
+
+.logo-text {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--primary-orange);
+  margin: 0;
+  text-shadow: 2px 2px 0px var(--neutral-black);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    gap: 16px;
+    padding: 12px 0;
+  }
+  
+  .logo-text {
+    font-size: 1.75rem;
+  }
+  
+  .nav {
+    width: 100%;
+    justify-content: center;
+  }
+}
